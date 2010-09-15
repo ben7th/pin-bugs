@@ -1,0 +1,14 @@
+development:
+  name: pin-bugs
+  url: http://dev.2010.mindpin.com/
+  master_url: http://dev.2010.mindpin.com/
+
+test:
+  name: pin-bugs
+  url: http://dev.2010.mindpin.com/
+  master_url: http://dev.2010.mindpin.com/
+
+production:
+  name: pin-bugs
+  url: http://2010.mindpin.com/
+  master_url: http://2010.mindpin.com/
