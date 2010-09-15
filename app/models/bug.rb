@@ -19,6 +19,15 @@ class Bug < ActiveRecord::Base
     end
   end
 
+  if RAILS_ENV == "test"
+    ATTACHED_FILE_PATH_ROOT = "/tmp/"
+    ATTACHED_FILE_URL_ROOT = "http://localhost"
+  else
+    SETTINGS = YAML.load(CoreService.project(CoreService::USER_AUTH).settings)
+    ATTACHED_FILE_PATH_ROOT = SETTINGS["user_logo_file_path_root"]
+    ATTACHED_FILE_URL_ROOT = SETTINGS["user_logo_file_url_root"]
+  end
+
   # attachment
   @attachment_path = "#{ATTACHED_FILE_PATH_ROOT}:class/:attachment/:id/:style/:basename.:extension"
   @attachment_url = "#{ATTACHED_FILE_URL_ROOT}:class/:attachment/:id/:style/:basename.:extension"

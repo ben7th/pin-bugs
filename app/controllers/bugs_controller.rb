@@ -38,7 +38,6 @@ class BugsController < ApplicationController
 
   def index
     @bugs = Bug.find(:all,:order=>"created_at desc").paginate(:page => params[:page] ,:per_page=>10 )
-    render :layout=>'black_page'
   end
 
   def show

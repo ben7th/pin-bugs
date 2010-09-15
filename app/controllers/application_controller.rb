@@ -7,9 +7,6 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery
 
-  # 通过插件开启gzip压缩
-  after_filter OutputCompressionFilter
-
   private
   # 修正IE6浏览器请求头问题
   def fix_ie6_accept

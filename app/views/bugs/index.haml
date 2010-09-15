@@ -2,6 +2,7 @@
   = stylesheet_link_tag "views/bugs"
 
 - content_for :javascripts do
+  = javascript_include_tag 'views/bugs/comment'
   :javascript
     new MarkableListComments("mplist_bugs",{markable:"bugs"})
 
