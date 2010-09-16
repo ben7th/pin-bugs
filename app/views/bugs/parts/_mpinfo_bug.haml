@@ -2,7 +2,8 @@
   =render :partial=>"bugs/parts/meta_bug",:locals=>{:bug=>bug}
   .bbody
     %p.font14= bug.content
-    %img{:src=>"#{bug.attachment.url(:medium)}"}
+    -if !!bug.attachment_file_name
+      %img{:src=>"#{bug.attachment.url(:medium)}"}
 
     .baction.fright
       = link_to "查看详情",bug
