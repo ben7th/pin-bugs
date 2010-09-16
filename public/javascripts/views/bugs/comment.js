@@ -45,7 +45,9 @@ RemarkManager = {
     });
     var width = (text.getWidth()-3)+"px";
     var height = (text.getHeight()-3)+"px";
-    out_div.insert("<div id='null_content_tip' style='position:absolute;background-color:#FFE2AF;width:"+width+";height:"+height+";top:"+(out_div.down("label").getHeight()+2)+"px;left:2px;'></div>");
+    var label = out_div.down("label")
+    var top = label ? label.getHeight()+2 : 2;
+    out_div.insert("<div id='null_content_tip' style='position:absolute;background-color:#FFE2AF;width:"+width+";height:"+height+";top:"+top+"px;left:2px;'></div>");
     Effect.Pulsate($('null_content_tip'),{
       afterFinish : function(o){
         $('null_content_tip').remove();
