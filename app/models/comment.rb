@@ -17,7 +17,7 @@ class Comment < ActiveRecord::Base
     def create_comment(attrs)
       comment = self.comments.new(attrs)
       comment.save!
-      self.create_comment_special_logic_for(comment)
+#      self.create_comment_special_logic_for(comment)
       comment
     end
 

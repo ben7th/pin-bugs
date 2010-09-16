@@ -1,4 +1,5 @@
 class Bug < ActiveRecord::Base
+  
   apply_simple_captcha :message=>"验证码错误",:add_to_base=>true
   belongs_to :user
   

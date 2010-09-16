@@ -2,11 +2,6 @@ class BugsController < ApplicationController
 
   before_filter :per_load
 
-  def new
-    @bug = Bug.new
-    return render :layout=>'black_page'
-  end
-
   def create
     @bug = Bug.new(params[:bug])
     @bug.user_agent = request.user_agent
@@ -41,7 +36,6 @@ class BugsController < ApplicationController
   end
 
   def show
-    render :layout=>"black_page"
   end
 
   def update

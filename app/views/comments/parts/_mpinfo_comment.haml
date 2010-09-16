@@ -7,11 +7,9 @@
     .fleft.marginr5
       =logo creator,'tiny'
     .fleft.marginr5
-      %b= qlink creator
+      %b= creator.email
     - if adminable
       .fleft.isme 这是我
-    - if creator.is_admin?
-      .fleft.tag 工作人员
 
     .fright
       .fleft.marginr10
@@ -22,5 +20,4 @@
     %p= comment.content
     - if adminable
       .actions
-        = link_to '<span>修改</span>','javascript:void(0)',:class=>'minibutton'
         = link_to_remote "<span>删除</span>",:url=>comment_path(comment),:method=>:delete,:confirm=>"确定要删除这个？",:html=>{:class=>'minibutton'}

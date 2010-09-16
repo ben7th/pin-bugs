@@ -1,0 +1,7 @@
+cn:
+  activerecord:
+    attributes:
+      bug:
+        attachment: 附件（可选）
+      comment:
+        content: 评论正文
