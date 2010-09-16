@@ -26,22 +26,6 @@ class CreateAllTables < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    create_table "entries", :force => true do |t|
-      t.integer  "user_id"
-      t.integer  "resource_id"
-      t.string   "resource_type"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.datetime "deleted_at"
-      t.integer  "host_id"
-      t.string   "host_type"
-      t.string   "from"
-      t.boolean  "forbidden"
-    end
-
-    add_index "entries", ["resource_id", "resource_type"], :name => "index_resource_entries_on_resource_id_and_resource_type"
-    add_index "entries", ["user_id"], :name => "index_resource_entries_on_user_id"
-
     create_table "favorites", :force => true do |t|
       t.integer  "favorable_id"
       t.string   "favorable_type"
@@ -51,15 +35,5 @@ class CreateAllTables < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    create_table "file_entries", :force => true do |t|
-      t.string   "title"
-      t.string   "content_file_name"
-      t.string   "content_content_type"
-      t.integer  "content_file_size"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.text     "subject"
-      t.string   "detail"
-    end
   end
 end
