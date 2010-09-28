@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller=>"bugs"
   map.resources :bugs do |bug|
     bug.resources :favorites
     bug.resources :comments,:controller=>"bug_comments",:collection=>{:newest=>:get}
